@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: big_3
+        description: "Daily OHLCV prices for AAPL, MSFT, GOOGL from 2024Q1 - 2025Q3 via yfinance"
+        columns:
+          - name: trading_date
+            data_tests: 
+              - not_null
+          - name: ticker
+            data_tests:
+              - accepted_values:
+                  arguments:
+                    values: ["AAPL", "MSFT", "GOOGL"]
+      - name: company_dim
+        description: "Simple properties of companies using Ticker as ID"
+
+
+
+
