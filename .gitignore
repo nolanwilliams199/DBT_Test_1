@@ -10,7 +10,7 @@ env/
 # DuckDB
 *.duckdb
 
-# dbt (for later)
+# dbt
 target/
 dbt_packages/
 logs/
